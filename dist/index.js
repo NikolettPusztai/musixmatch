@@ -26,14 +26,15 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /**
  * new musixmatch
  * @param {obj} object
+ * @param {string} proxy
  */
 function musixmatch(obj, proxy) {
-	if (!(this instanceof musixmatch)) return new musixmatch(obj);
+	if (!(this instanceof musixmatch)) return new musixmatch(obj, proxy);
 	var obj = obj ? obj : {};
 	this._datas = {};
 	this._datas.apikey = obj.apikey ? obj.apikey : "";
 	this._datas.format = obj.format ? obj.format : "json";
-	this.uri = "http://" + proxy + "api.musixmatch.com/ws/1.1/";
+	this.uri = "https://" + proxy + "api.musixmatch.com/ws/1.1/";
 }
 
 _methods2.default.forEach(function (entry) {
