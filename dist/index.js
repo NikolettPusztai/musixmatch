@@ -19,7 +19,7 @@ var _methods2 = _interopRequireDefault(_methods);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /* @Name musixmatch
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                           *  @Version 0.3.0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                           *  @Version 0.3.2
                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *  @author c0b41
                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
 
@@ -27,13 +27,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
  * new musixmatch
  * @param {obj} object
  */
-function musixmatch(obj) {
+function musixmatch(obj, proxy) {
 	if (!(this instanceof musixmatch)) return new musixmatch(obj);
 	var obj = obj ? obj : {};
 	this._datas = {};
 	this._datas.apikey = obj.apikey ? obj.apikey : "";
 	this._datas.format = obj.format ? obj.format : "json";
-	this.uri = "http://api.musixmatch.com/ws/1.1/";
+	this.uri = "http://" + proxy + "api.musixmatch.com/ws/1.1/";
 }
 
 _methods2.default.forEach(function (entry) {
