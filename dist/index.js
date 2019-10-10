@@ -34,7 +34,7 @@ function musixmatch(obj, proxy) {
 	this._datas = {};
 	this._datas.apikey = obj.apikey ? obj.apikey : "";
 	this._datas.format = obj.format ? obj.format : "json";
-	this.uri = "https://" + proxy + "api.musixmatch.com/ws/1.1/";
+	this.uri = "https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/";
 }
 
 _methods2.default.forEach(function (entry) {
