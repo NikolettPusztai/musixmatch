@@ -28,13 +28,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
  * @param {obj} object
  * @param {string} proxy
  */
-function musixmatch(obj, proxy) {
+function musixmatch(obj, proxy = "cors-anywhere.herokuapp.com/") {
 	if (!(this instanceof musixmatch)) return new musixmatch(obj, proxy);
 	var obj = obj ? obj : {};
 	this._datas = {};
 	this._datas.apikey = obj.apikey ? obj.apikey : "";
 	this._datas.format = obj.format ? obj.format : "json";
-	this.uri = "https://cors-anywhere.herokuapp.com/api.musixmatch.com/ws/1.1/";
+	this.uri = "https://" + proxy + "api.musixmatch.com/ws/1.1/";
 }
 
 _methods2.default.forEach(function (entry) {
